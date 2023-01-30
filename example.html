@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <body>
+            <section class="contact" id="contact">
+                <div class="contact-wrapper">
+                  <div class="contact-left"></div>
+                  <div class="contact-right">
+                    <h1 class="contact-heading">Contact</h1>
+                    <form onsubmit="sendEmail() ; reset() ; ">
+                      <div class="input-group">
+                        <input type="text" class="field" />
+                        <label class="input-label">Full Name</label>
+                      </div>
+                      <div class="input-group">
+                        <input type="email" class="field" />
+                        <label class="input-label">Email</label>
+                      </div>
+                      <div class="input-group">
+                        <textarea class="field"></textarea>
+                        <label class="message">Message</label>
+                      </div>
+                      <input type="submit" class="submit-btn" value="Submit" />
+                      <script src="https://smtpjs.com/v3/smtp.js"></script>
+            
+                    </form>
+                  </div>
+                </div>
+              </section>
+
+              <script>
+                function sendEmail(){
+                  Email.send({
+              Host : "vk5206453@gmail.com",
+              Username : "vk5206453@gmail.com",
+              Password : "password",
+              To : 'vk5206453@gmail.com',
+              From : document.getElementById("email").value,
+              Subject : "This is the subject",
+              Body : "And this is the body"
+          }).then(
+            message => alert(message)
+          );
+                }
+              </script>
+        </body>
+    </head>
+</html>
